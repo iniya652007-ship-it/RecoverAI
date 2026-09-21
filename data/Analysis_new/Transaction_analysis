@@ -1,0 +1,44 @@
+import pandas as pd
+
+df = pd.read_csv("data/Transactions.csv")
+
+print(df)
+print(df.head())
+print(df.describe())
+print(df.info())
+print(df.columns)
+print(df.shape)
+
+successful_transactions = df[df["status"] == "SUCCESS"]
+failed_transactions = df[df["status"] == "FAILED"]
+print("SUCCESSFUL TRANSACTIONS ARE DONE")
+print("FAILED TRANSACTIONS")
+SUCCESSFUL_COUNT = len(df[df["status"] == "SUCCESS"])
+FAILED_COUNT = len(df[df["status"] == "FAILED"])
+print("successful count of transactions are:")
+print(SUCCESSFUL_COUNT)
+print("failed count of transactions are:")
+print(FAILED_COUNT)
+
+SUCCESSFUL_RATE = SUCCESSFUL_COUNT / len(df) * 100
+print(f"successful rate of transactions are:  {SUCCESSFUL_RATE}%")
+SUCCESSFUL_REVENUE = successful_transactions["amount"].sum()
+print(f"Total revenue from successful transactions: {SUCCESSFUL_REVENUE}")
+FAILED_REVENUE = failed_transactions["amount"].sum()
+print(f"Total revenue from failed transactions: {FAILED_REVENUE}")
+
+
+AVG_TRANSACTION_AMOUNT = df["amount"].mean()
+print("AVERAGE TRANSACTION AMOUNT IS :")
+print(AVG_TRANSACTION_AMOUNT)
+
+PAYMENT_METHOD_COUNT = df["method"].value_counts()
+print("COUNT OF TRANSACTIONS BY PAYMENT METHOD:")
+print(PAYMENT_METHOD_COUNT)
+PAYMENT_METHOD_REVENUE = df.groupby("method")["amount"].sum()
+print("REVENUE BY PAYMENT METHOD:")
+print(PAYMENT_METHOD_REVENUE)
+CUSTOMER_REVENUE = df.groupby("customer_id")["amount"].sum()
+print("REVENUE BY CUSTOMER:")
+print(CUSTOMER_REVENUE)
+

@@ -1,0 +1,10 @@
+import pandas as pd
+df=pd.read_csv("Transactions.csv")
+print(df)
+
+print("Number of transactions:", len(df))
+print("Total amount:", df["amount"].sum())
+print("Average amount:", df["amount"].mean())
+print("Highest transaction:", df["amount"].max())
+
+print(df["payment_method"].value_counts())

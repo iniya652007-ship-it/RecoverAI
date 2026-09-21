@@ -1,0 +1,10 @@
+customer_id,customer_name,amount,payment_method,status
+c101,iniya,1200.0,upi,success
+c102,akshaya,500.0,card,failed
+c103,shreya,750.0,upi,success
+c104,ayisha,1500.0,upi,success
+c104,ayisha,1500.0,upi,success
+c105,iniya,1400.0,upi,success
+c104,iniya,12020.0,upi,success
+c104,iniya,1500.0,upi,success
+c104,ini,11111.0,upi,success

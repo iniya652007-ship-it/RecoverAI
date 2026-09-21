@@ -1,0 +1,11 @@
+transaction_id,customer_id,amount,status,payment,date
+T001,C001,600,success,UPI,2026-08-21
+T002,C002,1200,success,Card,2026-08-22
+T003,C003,300,failed,UPI,2026-08-21
+T004,C001,750,success,Card,2026-08-21
+T005,C004,450,success,NetBanking,2026-08-26
+T006,C002,1000,success,UPI,2026-08-25
+T007,C005,800,failed,Card,2026-08-23
+T008,C003,1500,success,UPI,2026-08-23
+T009,C001,900,success,Card,2026-08-21
+T010,C004,900,failed,NetBanking,2026-08-24
